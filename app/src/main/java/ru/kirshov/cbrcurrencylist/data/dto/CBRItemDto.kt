@@ -1,4 +1,4 @@
-package ru.kirshov.cbrcurrencylist.data
+package ru.kirshov.cbrcurrencylist.data.dto
 
 
 import kotlinx.serialization.SerialName

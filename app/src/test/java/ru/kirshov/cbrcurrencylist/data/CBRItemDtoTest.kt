@@ -3,6 +3,7 @@ import com.google.common.truth.Truth.assertThat
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 import org.junit.Test
+import ru.kirshov.cbrcurrencylist.data.dto.CBRItemDto
 
 
 class CBRItemDtoTest{
@@ -17,7 +18,7 @@ class CBRItemDtoTest{
                 "            \"Previous\": 45.258\n" +
                 "        }"
     }
-    private fun expectValue():CBRItemDto{
+    private fun expectValue(): CBRItemDto {
         return CBRItemDto(
             id = "R01010",
             numCode = "036",
