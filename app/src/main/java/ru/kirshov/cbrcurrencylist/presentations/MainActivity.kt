@@ -1,8 +1,8 @@
-package ru.kirshov.cbrcurrencylist
+package ru.kirshov.cbrcurrencylist.presentations
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import ru.kirshov.cbrcurrencylist.databinding.ActivityMainBinding
+import ru.kirshov.cbrcurrencylist.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
