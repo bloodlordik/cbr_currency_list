@@ -6,4 +6,8 @@ data class AppDataInfo(
     val previousDate: String,
     val previousURL: String,
     val timestamp: String
-)
+){
+    companion object{
+        fun createEmpty():AppDataInfo = AppDataInfo("","","","")
+    }
+}
