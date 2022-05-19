@@ -15,6 +15,7 @@ class Dependencies(val appContext: Context) {
     private fun getOkHttp():OkHttpClient{
         return OkHttpClient.Builder().build()
     }
+    @OptIn(kotlinx.serialization.ExperimentalSerializationApi::class)
     fun getCbrRetrofitClient():CbrRepository{
         val contentType = "application/json".toMediaType()
         return Retrofit.Builder()
