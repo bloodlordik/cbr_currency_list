@@ -8,7 +8,7 @@ import ru.kirshov.cbrcurrencylist.dependencies
 import ru.kirshov.cbrcurrencylist.domain.MainViewModel
 
 class MainActivity : AppCompatActivity() {
-    private val viewModel:MainViewModel by viewModels()
+  //  private val viewModel:MainViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
