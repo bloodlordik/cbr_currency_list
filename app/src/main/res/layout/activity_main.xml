@@ -7,13 +7,11 @@
     tools:context=".presentations.MainActivity"
     android:name="ru.kirshov.cbrcurrencylist.presentations.fragments.RootFragment"
     tools:layout="@layout/fragment_root">
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Loading"
-        android:layout_gravity="center"
-        android:textSize="24sp"/>
 
-
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:name="ru.kirshov.cbrcurrencylist.presentations.fragments.LoadingFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout="@layout/fargment_loading" />
 </FrameLayout>

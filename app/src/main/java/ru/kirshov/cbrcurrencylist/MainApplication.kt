@@ -9,23 +9,10 @@ import ru.kirshov.cbrcurrencylist.domain.ApplicationViewModelFactory
 import ru.kirshov.cbrcurrencylist.domain.story.AppStory
 
 class MainApplication:Application(){
-    private var dependencies:Dependencies? = null
-    private val story:AppStory by lazy(LazyThreadSafetyMode.NONE) { AppStory() }
-    override fun onCreate() {
-        super.onCreate()
-        dependencies = Dependencies(this)
-    }
 
-    override fun onTerminate() {
-        super.onTerminate()
-        dependencies = null
-    }
-
-    fun viewModelFactory():ApplicationViewModelFactory{
-            return ApplicationViewModelFactory()
-    }
+    val viewModelFactory by lazy { ApplicationViewModelFactory(this) }
 }
 
 val Context.factory:ApplicationViewModelFactory get(){
-    return (this.applicationContext as MainApplication).viewModelFactory()
+    return (this.applicationContext as MainApplication).viewModelFactory
 }
