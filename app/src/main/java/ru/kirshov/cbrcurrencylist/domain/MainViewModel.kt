@@ -1,11 +1,23 @@
 package ru.kirshov.cbrcurrencylist.domain
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
-import ru.kirshov.cbrcurrencylist.domain.story.AppEventListener
+import androidx.lifecycle.asLiveData
+import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.launch
+import ru.kirshov.cbrcurrencylist.domain.story.AppError
 import ru.kirshov.cbrcurrencylist.domain.story.AppEvents
+import ru.kirshov.cbrcurrencylist.domain.story.AppRepository
 
 class MainViewModel(
-    private val events:AppEventListener<AppEvents>
+    private val appRepository: AppRepository
 ):ViewModel() {
+    fun update(){
+        viewModelScope.launch {
+            appRepository.update()
+        }
+    }
+    val status:LiveData<AppEvents> = appRepository.status.asLiveData()
 
 }
