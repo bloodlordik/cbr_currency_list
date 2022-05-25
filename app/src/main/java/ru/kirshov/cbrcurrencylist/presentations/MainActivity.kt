@@ -18,16 +18,17 @@ import ru.kirshov.cbrcurrencylist.factory
 import ru.kirshov.cbrcurrencylist.presentations.fragments.ErrorFragment
 import ru.kirshov.cbrcurrencylist.presentations.fragments.LoadingFragment
 import ru.kirshov.cbrcurrencylist.presentations.fragments.RootFragment
+import ru.kirshov.cbrcurrencylist.presentations.navigation.Navigator
 
 class MainActivity : AppCompatActivity() {
     private val viewModel: MainViewModel by viewModels(){
         factory
     }
-
+    private val navigator = Navigator(fragmentManager = supportFragmentManager)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        viewModel.status.observe(this, Observer(this::selectScreen))
+        viewModel.status.observe(this, Observer(navigator::navigateTo))
         viewModel.update()
 
     }

@@ -1,7 +1,7 @@
 package ru.kirshov.cbrcurrencylist.domain.story
 
 data class CurrencyItem(
-    val id: Int,
+    val id: String,
     val charCode: String,
     val title: String,
     val value: Double,
